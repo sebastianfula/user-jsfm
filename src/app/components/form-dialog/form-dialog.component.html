@@ -1,0 +1,75 @@
+<!-- <div>
+    
+</div> -->
+<!-- <p> -->
+    <mat-toolbar>
+        <h1 mat-dialog-title style="float: left">Nuevo Registro de Solicitud</h1>
+        <!-- <span class="material-icons"  [mat-dialog-close]>cancel</span> -->
+        <button mat-icon-button  style="float: right; margin-left: 230px;" aria-label="Example icon button with a open in new tab icon">
+            <mat-icon [mat-dialog-close]>cancel</mat-icon>
+        </button>
+      <!-- <span>My Application</span> -->
+    </mat-toolbar>
+<!-- </p> -->
+<div mat-dialog-content>
+    <mat-grid-list cols="2" rowHeight="70px">
+        <form [formGroup]="userForm">
+            <mat-grid-tile>
+                <mat-form-field >
+                    <mat-label>Nombre *</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field >
+                    <mat-label>Usuario *</mat-label>
+                    <input matInput formControlName="username">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field >
+                    <mat-label>Email *</mat-label>
+                    <input matInput type="email" formControlName="email">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" formControlName="startDate" placeholder="Fecha Ingreso">
+                    <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </mat-grid-tile>
+        </form>
+      </mat-grid-list>
+    
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button style="float: right; margin-left: 450px; margin-top: -50px;" (click)="onSave()" [mat-dialog-close]="userForm.valid" [disabled]="!userForm.valid" color="primary">
+        Crear
+    </button>
+</div>
+<!-- 
+<div>
+    <h1 mat-dialog-title>Artículo</h1>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+            <mat-form-field>
+                <input matInput  type="number" placeholder="Ingrese código">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="text" placeholder="Ingrese descripción">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput  type="number" placeholder="Ingrese precio">
+            </mat-form-field>
+
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button >Cancelar</button>
+        <button mat-button [mat-dialog-close]="false" cdkFocusInitial>Confirmar</button>
+    </div>
+</div> -->
